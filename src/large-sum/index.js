@@ -1,8 +1,6 @@
-const largeSum = () => {
-  console.log("Large Sum");
+const data = require("./numbers-data").data;
+
+module.exports = () => {
+  console.log("Large Sum", data);
   return null;
 };
-
-module.exports = largeSum;
-
-largeSum();

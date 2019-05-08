@@ -1,8 +1,4 @@
-const multiples = () => {
+module.exports = () => {
   console.log("Multiples");
   return null;
 };
-
-module.exports = multiples;
-
-multiples();

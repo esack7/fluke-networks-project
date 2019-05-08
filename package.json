@@ -2,10 +2,8 @@
   "name": "flukeexercise",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
-    "multiples": "node ./src/multiples/index.js",
-    "largeSum": "node ./src/large-sum/index.js",
+    "start": "node ./src/index.js",
     "test": "jest"
   },
   "author": "Isaac Heist",
