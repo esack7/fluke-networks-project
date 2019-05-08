@@ -7,9 +7,9 @@ let arg = process.argv[2];
 if (arg) arg = arg.toLowerCase();
 
 if (arg === "multiples") {
-  multiples();
+  process.stdout.write(multiples().toString());
 } else if (arg === "largesum") {
-  largSum();
+  process.stdout.write(largSum());
 } else {
   process.stdout.write(
     `To run this program you must either type either:

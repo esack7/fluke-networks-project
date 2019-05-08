@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "start": "node ./src/index.js",
-    "test": "jest"
+    "test": "jest --verbose --coverage"
   },
   "author": "Isaac Heist",
   "license": "MIT",
