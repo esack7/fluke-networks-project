@@ -9,7 +9,7 @@ if (arg) arg = arg.toLowerCase();
 if (arg === "multiples") {
   process.stdout.write(multiples().toString());
 } else if (arg === "largesum") {
-  process.stdout.write(largSum());
+  process.stdout.write(largSum().toString());
 } else {
   process.stdout.write(
     `To run this program you must either type either:
