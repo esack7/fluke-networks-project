@@ -19,6 +19,7 @@ module.exports = (largeNumArray = data, digits = 10) => {
     nestedIteration += 1;
     sum *= 10;
   }
-
+  // Return statement truncates the sum by a factor of the sumCarryOver value plus one,
+  // which will be first 10 digits(or amount defined by digits) of the sum
   return Math.floor(sum / Math.pow(10, sumCarryOver + 1));
 };
