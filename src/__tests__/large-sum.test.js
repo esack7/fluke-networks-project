@@ -1,3 +1,5 @@
+"use strict";
+
 const largeSum = require("../large-sum/index");
 require("jest");
 

@@ -1,28 +1,24 @@
 const { data } = require("./numbers-data");
+const { calculateSumCarryOver, createCalcArray } = require("./large-sum-utils");
 
-module.exports = () => {
+module.exports = (largeNumArray = data, digits = 10) => {
   let sum = 0;
-  let iteration = 0;
-  const calcArray = data.map(ele =>
-    ele
-      .toString()
-      .split("e")[0]
-      .split("")
-      .filter(str => {
-        if (str !== ".") return str;
-        return null;
-      })
-      .map(strInt => parseInt(strInt, 10))
-  );
+  let nestedIteration = 0;
 
-  while (sum < 10000000000000) {
+  // Create array of int arrays representative of the large number equivilent.
+  // 12345 => [1,2,3,4,5]
+  const calcArray = createCalcArray(largeNumArray);
+
+  // Calculates the maximum digits that a summation of all the integers in calcArray at a particular iteration
+  const sumCarryOver = calculateSumCarryOver(calcArray);
+
+  while (sum < Math.pow(10, digits + sumCarryOver)) {
     for (let i = 0; i < calcArray.length; i += 1) {
-      sum += calcArray[i][iteration];
+      sum += calcArray[i][nestedIteration];
     }
-    console.log(sum);
-    iteration += 1;
+    nestedIteration += 1;
     sum *= 10;
   }
-  console.log(iteration);
-  return Math.floor(sum / 10000);
+
+  return Math.floor(sum / Math.pow(10, sumCarryOver + 1));
 };
