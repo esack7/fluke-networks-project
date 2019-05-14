@@ -8,22 +8,22 @@ const {
 } = require("../large-sum/large-sum-utils");
 
 const mockLargeNumArray = [
-  123456789123456789123456789,
-  123456789123456789123456789,
-  123456789123456789123456789,
-  123456789123456789123456789,
-  123456789123456789123456789,
-  123456789123456789123456789,
-  123456789123456789123456789,
-  123456789123456789123456789,
-  123456789123456789123456789
+  '123456789123456789123456789',
+  '123456789123456789123456789',
+  '123456789123456789123456789',
+  '123456789123456789123456789',
+  '123456789123456789123456789',
+  '123456789123456789123456789',
+  '123456789123456789123456789',
+  '123456789123456789123456789',
+  '123456789123456789123456789'
 ];
 const mockLargeNumArray2 = [
-  222222222222222222222222222,
-  333333333333333333333333333,
-  444444444444444444444444444
+  '222222222222222222222222222',
+  '333333333333333333333333333',
+  '444444444444444444444444444'
 ];
-const mockLargeNumArray3 = [123456789123456789123456789];
+const mockLargeNumArray3 = ['123456789123456789123456789'];
 
 describe("Testing Large Sum function", () => {
   test("The default result of calling large-sum function will be 5537376230", () => {
@@ -50,9 +50,9 @@ describe("Testing Large Sum helper functions", () => {
   test("The calculateSumCarryOver function with mockLargeNumArray3 passed in should return 1", () => {
     expect(calculateSumCarryOver(mockLargeNumArray3)).toBe(1);
   });
-  test("The createCalcArray function with mockLargeNumArray3 passed in should return [[1,2,3,4,5,6,7,8,9,1,2,3,4,5,6,7,9]]", () => {
+  test("The createCalcArray function with mockLargeNumArray3 passed in should return [[1,2,3,4,5,6,7,8,9,1,2,3,4,5,6,7,8,9,1,2,3,4,5,6,7,8,9]]", () => {
     expect(createCalcArray(mockLargeNumArray3)).toEqual([
-      [1, 2, 3, 4, 5, 6, 7, 8, 9, 1, 2, 3, 4, 5, 6, 7, 9]
+      [1, 2, 3, 4, 5, 6, 7, 8, 9, 1, 2, 3, 4, 5, 6, 7, 8, 9, 1, 2, 3, 4, 5, 6, 7, 8, 9]
     ]);
   });
   test("The createCalcArray should return nested arrays with length of greater than 14", () => {

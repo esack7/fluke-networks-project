@@ -3,13 +3,7 @@ module.exports = {
   createCalcArray: arr =>
     arr.map(ele =>
       ele
-        .toString()
-        .split("e")[0]
         .split("")
-        .filter(str => {
-          if (str !== ".") return str;
-          return null;
-        })
         .map(strInt => parseInt(strInt, 10))
     )
 };
